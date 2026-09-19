@@ -6,6 +6,8 @@ import com.carlos.novo_projeto.service.TarefaService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/tarefas")
 public class TarefaController {
@@ -17,6 +19,11 @@ public class TarefaController {
     @PostMapping
     public TarefaResponse cadastrar(@RequestBody @Valid TarefaRequest tarefaRequest){
         return tarefaService.cadastrar(tarefaRequest);
+    }
+    @GetMapping
+    public List<TarefaResponse> listarTodas(){
+        return tarefaService.listarTodas();
+
     }
     @GetMapping("/{id}")
     public TarefaResponse buscarPorId(@PathVariable Long id){

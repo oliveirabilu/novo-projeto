@@ -27,10 +27,18 @@ public class TarefaService {
         var tarefaSalva = tarefaRepository.save(tarefa);
         return new TarefaResponse(tarefaSalva);
     }
+
     public TarefaResponse buscarPorId(Long id) {
         var tarefa = tarefaRepository.findById(id)
                 .orElseThrow(TarefaNaoEncontradaException::new);
 
         return new TarefaResponse(tarefa);
+    }
+
+    public List<TarefaResponse> listarTodas(){
+    return tarefaRepository.findAll()
+            .stream()
+            .map(TarefaResponse::new)
+            .toList();
     }
 }
