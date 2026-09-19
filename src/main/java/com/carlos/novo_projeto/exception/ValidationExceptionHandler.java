@@ -20,4 +20,6 @@ public class ValidationExceptionHandler {
         }
         return ResponseEntity.badRequest().body(errosTratados);
     }
+
+
 }

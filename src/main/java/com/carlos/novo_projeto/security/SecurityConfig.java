@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+
 @EnableWebSecurity
 public class SecurityConfig {
 
@@ -16,6 +17,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.POST, "/tarefas").permitAll()
+                .requestMatchers(HttpMethod.GET, "/tarefas/**").permitAll()
                 .anyRequest().authenticated());
         return http.build();
     }
