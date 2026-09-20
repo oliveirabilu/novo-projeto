@@ -2,6 +2,7 @@ package com.carlos.novo_projeto.service;
 
 import com.carlos.novo_projeto.dto.TarefaRequest;
 import com.carlos.novo_projeto.dto.TarefaResponse;
+import com.carlos.novo_projeto.dto.TarefaUpdateRequest;
 import com.carlos.novo_projeto.entity.Tarefa;
 import com.carlos.novo_projeto.exception.TarefaNaoEncontradaException;
 import com.carlos.novo_projeto.exception.ValidationExceptionHandler;
@@ -40,5 +41,12 @@ public class TarefaService {
             .stream()
             .map(TarefaResponse::new)
             .toList();
+    }
+    public void atualizarTarefa(Long id, TarefaUpdateRequest request){
+            var tarefaAtual= tarefaRepository.findById(id)
+            .orElseThrow(TarefaNaoEncontradaException::new);
+            tarefaAtual.atualizarTarefa(request);
+            tarefaRepository.save(tarefaAtual);
+
     }
 }

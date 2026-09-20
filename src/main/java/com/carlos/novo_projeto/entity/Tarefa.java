@@ -1,5 +1,6 @@
 package com.carlos.novo_projeto.entity;
 
+import com.carlos.novo_projeto.dto.TarefaUpdateRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,5 +25,17 @@ public class Tarefa {
         this.titulo = titulo;
         this.descricao = descricao;
         this.status = status;
+    }
+
+    public void atualizarTarefa(TarefaUpdateRequest request) {
+        if (request.titulo() != null) {
+            this.titulo = request.titulo();
+        }
+        if (request.descricao() != null){
+            this.descricao = request.descricao();
+        }
+        if (request.status() != null){
+            this.status = request.status();
+        }
     }
 }

@@ -16,9 +16,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.POST, "/tarefas").permitAll()
-                .requestMatchers(HttpMethod.GET, "/tarefas/**").permitAll()
-                .anyRequest().authenticated());
+                        .requestMatchers(HttpMethod.POST, "/tarefas").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/tarefas/**").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/tarefas/**").permitAll()
+                        .anyRequest().authenticated());
         return http.build();
     }
 }

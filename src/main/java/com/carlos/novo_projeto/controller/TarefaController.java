@@ -2,6 +2,7 @@ package com.carlos.novo_projeto.controller;
 
 import com.carlos.novo_projeto.dto.TarefaRequest;
 import com.carlos.novo_projeto.dto.TarefaResponse;
+import com.carlos.novo_projeto.dto.TarefaUpdateRequest;
 import com.carlos.novo_projeto.service.TarefaService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -28,5 +29,9 @@ public class TarefaController {
     @GetMapping("/{id}")
     public TarefaResponse buscarPorId(@PathVariable Long id){
         return tarefaService.buscarPorId(id);
+    }
+    @PutMapping("/{id}")
+    public void atualizarTarefa(@PathVariable Long id, @RequestBody TarefaUpdateRequest request ){
+        tarefaService.atualizarTarefa(id, request);
     }
  }
