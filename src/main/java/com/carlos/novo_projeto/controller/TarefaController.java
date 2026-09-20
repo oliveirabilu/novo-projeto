@@ -27,7 +27,6 @@ public class TarefaController {
     }
     @GetMapping("/{id}")
     public TarefaResponse buscarPorId(@PathVariable Long id){
-
         return tarefaService.buscarPorId(id);
     }
  }
