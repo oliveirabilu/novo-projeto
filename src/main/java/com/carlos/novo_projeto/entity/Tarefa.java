@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -31,10 +32,10 @@ public class Tarefa {
         if (request.titulo() != null) {
             this.titulo = request.titulo();
         }
-        if (request.descricao() != null){
+        if (request.descricao() != null) {
             this.descricao = request.descricao();
         }
-        if (request.status() != null){
+        if (request.status() != null) {
             this.status = request.status();
         }
     }

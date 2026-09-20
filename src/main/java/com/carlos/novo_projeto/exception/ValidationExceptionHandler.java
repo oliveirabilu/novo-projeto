@@ -10,7 +10,7 @@ import java.util.HashMap;
 @RestControllerAdvice
 public class ValidationExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<?> tratarErroValidacao(MethodArgumentNotValidException ex){
+    public ResponseEntity<?> tratarErroValidacao(MethodArgumentNotValidException ex) {
         var erros = ex.getBindingResult().getFieldErrors();
 
         var errosTratados = new HashMap<String, String>();

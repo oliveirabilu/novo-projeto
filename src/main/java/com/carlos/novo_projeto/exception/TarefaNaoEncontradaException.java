@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class TarefaNaoEncontradaException extends RuntimeException{
+public class TarefaNaoEncontradaException extends RuntimeException {
     @ExceptionHandler(TarefaNaoEncontradaException.class)
-    public ResponseEntity<?> tratarTarefaNaoEncontrada(){
+    public ResponseEntity<?> tratarTarefaNaoEncontrada() {
         return ResponseEntity.notFound().build();
     }
 }
