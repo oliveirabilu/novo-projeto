@@ -49,4 +49,10 @@ public class TarefaService {
             tarefaRepository.save(tarefaAtual);
 
     }
+
+    public void apagarTarefa(Long id){
+        var tarefa = tarefaRepository.findById(id)
+                .orElseThrow(TarefaNaoEncontradaException::new);
+        tarefaRepository.delete(tarefa);
+    }
 }

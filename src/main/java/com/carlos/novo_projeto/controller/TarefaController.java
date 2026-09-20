@@ -34,4 +34,8 @@ public class TarefaController {
     public void atualizarTarefa(@PathVariable Long id, @RequestBody TarefaUpdateRequest request ){
         tarefaService.atualizarTarefa(id, request);
     }
+    @DeleteMapping("/{id}")
+    public void apagarTarefa(@PathVariable Long id){
+        tarefaService.apagarTarefa(id);
+    }
  }

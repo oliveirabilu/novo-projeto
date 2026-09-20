@@ -19,6 +19,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/tarefas").permitAll()
                         .requestMatchers(HttpMethod.GET, "/tarefas/**").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/tarefas/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/tarefas/**").permitAll()
                         .anyRequest().authenticated());
         return http.build();
     }
