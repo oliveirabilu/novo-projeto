@@ -1,5 +1,6 @@
 package com.carlos.novo_projeto.controller;
 
+import com.carlos.novo_projeto.dto.LoginRequest;
 import com.carlos.novo_projeto.dto.UsuarioRequest;
 import com.carlos.novo_projeto.service.UsuarioService;
 import org.springframework.web.bind.annotation.PostMapping;
